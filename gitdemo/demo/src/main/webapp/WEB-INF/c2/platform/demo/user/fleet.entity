@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity:Entity xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdata="http://www.chinacreator.com/platform/mvc/cdata" xmlns:docket="http://www.chinacreator.com/platform/mvc/docket" xmlns:entity="http://www.chinacreator.com/platform/mvc/entity" sn="003">
+  <docket:name>车队实体</docket:name>
+  <docket:createType>来自数据库</docket:createType>
+  <docket:primaryKey>
+    <docket:pkAttribute attribute="lineid"/>
+  </docket:primaryKey>
+  <docket:attributes>
+    <docket:attribute code="lineid" length="10" nullable="false" type="int" default="0 ">
+      <docket:valueRange xsi:type="cdata:AllValueRange"/>
+    </docket:attribute>
+    <docket:attribute code="fleetno" length="10" nullable="false" type="string10" default="">
+      <docket:valueRange xsi:type="cdata:AllValueRange"/>
+    </docket:attribute>
+    <docket:attribute code="fleetname" length="100" nullable="false" type="string128" default="">
+      <docket:valueRange xsi:type="cdata:AllValueRange"/>
+    </docket:attribute>
+    <docket:attribute code="fleettype" length="0" nullable="false" type="bigdouble" default="1 ">
+      <docket:valueRange xsi:type="cdata:AllValueRange"/>
+    </docket:attribute>
+    <docket:attribute code="contact" length="30" nullable="true" type="string32" default="">
+      <docket:valueRange xsi:type="cdata:AllValueRange"/>
+    </docket:attribute>
+    <docket:attribute code="tel" length="30" nullable="true" type="string32" default="">
+      <docket:valueRange xsi:type="cdata:AllValueRange"/>
+    </docket:attribute>
+    <docket:attribute code="cityname" length="300" nullable="true" type="string512" default="">
+      <docket:valueRange xsi:type="cdata:AllValueRange"/>
+    </docket:attribute>
+    <docket:attribute code="memo" length="100" nullable="true" type="string128" default="">
+      <docket:valueRange xsi:type="cdata:AllValueRange"/>
+    </docket:attribute>
+    <docket:attribute code="dtdate" length="7" nullable="false" type="date" default="sysdate ">
+      <docket:valueRange xsi:type="cdata:AllValueRange"/>
+    </docket:attribute>
+    <docket:attribute code="userno" length="30" nullable="true" type="string32" default="">
+      <docket:valueRange xsi:type="cdata:AllValueRange"/>
+    </docket:attribute>
+    <docket:attribute code="active" length="0" nullable="false" type="bigdouble" default="1 ">
+      <docket:valueRange xsi:type="cdata:AllValueRange"/>
+    </docket:attribute>
+    <docket:attribute code="bankname" length="300" nullable="true" type="string512" default="">
+      <docket:valueRange xsi:type="cdata:AllValueRange"/>
+    </docket:attribute>
+    <docket:attribute code="bankbillno" length="300" nullable="true" type="string512" default="">
+      <docket:valueRange xsi:type="cdata:AllValueRange"/>
+    </docket:attribute>
+    <docket:attribute code="invoicecompany" length="300" nullable="true" type="string512" default="">
+      <docket:valueRange xsi:type="cdata:AllValueRange"/>
+    </docket:attribute>
+  </docket:attributes>
+  <docket:subDokcets/>
+  <docket:events/>
+  <docket:table ds="oracledb" table="CAFLEET"/>
+  <entity:datas/>
+  <entity:views/>
+</entity:Entity>

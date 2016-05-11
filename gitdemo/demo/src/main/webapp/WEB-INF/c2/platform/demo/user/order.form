@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form:Form xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dync="http://www.chinacreator.com/platform/mvc/ui/dync" xmlns:form="http://www.chinacreator.com/platform/mvc/form" name="订单生成" sn="order001" type="form">
+  <form:control type="page/normal">
+    <form:attributes source="page/normal">
+      <dync:attribute default="" group="HTML" id="showHead" name="显示标题" value="">
+        <dync:render/>
+        <dync:children/>
+      </dync:attribute>
+      <dync:attribute default="" group="HTML" id="title" name="标题" value="">
+        <dync:render/>
+        <dync:children/>
+      </dync:attribute>
+      <dync:attribute default="" group="HTML" id="desc" name="描述" value="">
+        <dync:render/>
+        <dync:children/>
+      </dync:attribute>
+      <dync:attribute default="false" group="HTML" id="fixedHeight" name="自动高度" value="false">
+        <dync:render/>
+        <dync:children/>
+      </dync:attribute>
+      <dync:attribute default="false" group="HTML" id="compact" name="紧凑页面" value="false">
+        <dync:render/>
+        <dync:children/>
+      </dync:attribute>
+      <dync:attribute default="false" group="HTML" id="dirtyCheck" name="脏检查" value="false">
+        <dync:render/>
+        <dync:children/>
+      </dync:attribute>
+      <dync:attribute default="" group="注入配置" id="angularJsServices" name="注入服务" value="">
+        <dync:render/>
+        <dync:children/>
+      </dync:attribute>
+      <dync:attribute default="" group="事件" id="beforeDataSourceLoad" name="数据源加载前" value="">
+        <dync:render/>
+        <dync:children/>
+      </dync:attribute>
+      <dync:attribute default="" group="事件" id="afterDataSourceLoad" name="数据源加载后" value="">
+        <dync:render/>
+        <dync:children/>
+      </dync:attribute>
+      <dync:attribute default="" group="事件" id="onload" name="页面加载完成" value="">
+        <dync:render/>
+        <dync:children/>
+      </dync:attribute>
+    </form:attributes>
+  </form:control>
+  <form:child xsi:type="form:Group" binding="$model.order" id="order" name="列表型数据源">
+    <form:control type="container/table_jqgrid">
+      <form:attributes source="container/table_jqgrid">
+        <dync:attribute default="" group="加载后事件" id="onSelectRow" name="选择行" value="order_onSelectRow(rowid,status,e)">
+          <dync:children/>
+        </dync:attribute>
+        <dync:attribute default="false" group="高级功能" id="dnd" name="拖拽排序" value="true">
+          <dync:children/>
+        </dync:attribute>
+        <dync:attribute default="true" group="表格设置" id="multiselect" name="多选" value="false">
+          <dync:children/>
+        </dync:attribute>
+        <dync:attribute default="false" group="表格设置" id="rownumbers" name="序号" value="true">
+          <dync:children/>
+        </dync:attribute>
+        <dync:attribute default="" group="基本配置" id="width" name="宽度" value="98%">
+          <dync:children/>
+        </dync:attribute>
+      </form:attributes>
+    </form:control>
+    <form:child xsi:type="form:Group" id="toolbar_table" name="toolbar_table">
+      <form:control type="container/toolbar_table">
+        <form:attributes source="container/toolbar_table"/>
+      </form:control>
+      <form:child xsi:type="form:Field" id="buttonDel" name="删除">
+        <form:control type="widget/button_a_table">
+          <form:attributes source="widget/button_a_table">
+            <dync:attribute id="clickType" value="delete">
+              <dync:render/>
+              <dync:children/>
+            </dync:attribute>
+            <dync:attribute id="icon" value="fa-trash-o">
+              <dync:render/>
+              <dync:children/>
+            </dync:attribute>
+            <dync:attribute id="iconColor" value="red">
+              <dync:render/>
+              <dync:children/>
+            </dync:attribute>
+          </form:attributes>
+        </form:control>
+      </form:child>
+      <form:child xsi:type="form:Field" id="buttonAdd" name="新增">
+        <form:control type="widget/button_a_table">
+          <form:attributes source="widget/button_a_table">
+            <dync:attribute id="clickType" value="add">
+              <dync:render/>
+              <dync:children/>
+            </dync:attribute>
+            <dync:attribute id="icon" value="fa-plus">
+              <dync:render/>
+              <dync:children/>
+            </dync:attribute>
+            <dync:attribute id="iconColor" value="purple">
+              <dync:render/>
+              <dync:children/>
+            </dync:attribute>
+          </form:attributes>
+        </form:control>
+      </form:child>
+      <form:child xsi:type="form:Field" id="buttonEdit" name="编辑">
+        <form:control type="widget/button_a_table">
+          <form:attributes source="widget/button_a_table">
+            <dync:attribute id="clickType" value="edit">
+              <dync:render/>
+              <dync:children/>
+            </dync:attribute>
+            <dync:attribute id="icon" value="fa-pencil">
+              <dync:render/>
+              <dync:children/>
+            </dync:attribute>
+            <dync:attribute id="iconColor" value="blue">
+              <dync:render/>
+              <dync:children/>
+            </dync:attribute>
+          </form:attributes>
+        </form:control>
+      </form:child>
+      <form:child xsi:type="form:Field" id="buttonView" name="查看">
+        <form:control type="widget/button_a_table">
+          <form:attributes source="widget/button_a_table">
+            <dync:attribute id="icon" value="fa-bars">
+              <dync:render/>
+              <dync:children/>
+            </dync:attribute>
+            <dync:attribute id="iconColor" value="grey">
+              <dync:render/>
+              <dync:children/>
+            </dync:attribute>
+            <dync:attribute default="" group="事件设置" id="click" name="单击事件" value="buttonView_click(rowId,rowData,tableData)">
+              <dync:children/>
+            </dync:attribute>
+          </form:attributes>
+        </form:control>
+      </form:child>
+      <form:child xsi:type="form:Field" id="buttonSearch" name="查找">
+        <form:control type="widget/button_a_table">
+          <form:attributes source="widget/button_a_table">
+            <dync:attribute id="icon" value="fa-plus">
+              <dync:render/>
+              <dync:children/>
+            </dync:attribute>
+            <dync:attribute id="iconColor" value="purple">
+              <dync:render/>
+              <dync:children/>
+            </dync:attribute>
+            <dync:attribute default="" group="事件设置" id="click" name="单击事件" value="buttonSearch_click(rowId,rowData,tableData)">
+              <dync:children/>
+            </dync:attribute>
+          </form:attributes>
+        </form:control>
+      </form:child>
+      <form:child xsi:type="form:Field" id="buttonRefresh" name="刷新">
+        <form:control type="widget/button_a_table">
+          <form:attributes source="widget/button_a_table">
+            <dync:attribute id="clickType" value="refrash">
+              <dync:render/>
+              <dync:children/>
+            </dync:attribute>
+            <dync:attribute id="icon" value="fa-refresh">
+              <dync:render/>
+              <dync:children/>
+            </dync:attribute>
+            <dync:attribute id="iconColor" value="green">
+              <dync:render/>
+              <dync:children/>
+            </dync:attribute>
+          </form:attributes>
+        </form:control>
+      </form:child>
+    </form:child>
+    <form:child xsi:type="form:Field" binding="lineid" id="lineid" name="lineid">
+      <form:control type="widget/col_jqgrid">
+        <form:attributes source="widget/col_jqgrid">
+          <dync:attribute id="key" value="true">
+            <dync:render/>
+            <dync:children/>
+          </dync:attribute>
+          <dync:attribute id="hidden" value="true">
+            <dync:render/>
+            <dync:children/>
+          </dync:attribute>
+        </form:attributes>
+      </form:control>
+    </form:child>
+    <form:child xsi:type="form:Field" binding="orderno" id="orderno" name="订单编号">
+      <form:control type="widget/col_jqgrid">
+        <form:attributes source="widget/col_jqgrid"/>
+      </form:control>
+    </form:child>
+    <form:child xsi:type="form:Field" binding="custshipno" id="custshipno" name="custshipno">
+      <form:control type="widget/col_jqgrid">
+        <form:attributes source="widget/col_jqgrid"/>
+      </form:control>
+    </form:child>
+    <form:child xsi:type="form:Field" binding="customerid" id="customerid" name="customerid">
+      <form:control type="widget/col_jqgrid">
+        <form:attributes source="widget/col_jqgrid"/>
+      </form:control>
+    </form:child>
+    <form:child xsi:type="form:Field" binding="contractid" id="contractid" name="contractid">
+      <form:control type="widget/col_jqgrid">
+        <form:attributes source="widget/col_jqgrid"/>
+      </form:control>
+    </form:child>
+    <form:child xsi:type="form:Field" binding="userno" id="userno" name="userno">
+      <form:control type="widget/col_jqgrid">
+        <form:attributes source="widget/col_jqgrid"/>
+      </form:control>
+    </form:child>
+    <form:child xsi:type="form:Field" binding="dtdate" id="dtdate" name="dtdate">
+      <form:control type="widget/col_jqgrid">
+        <form:attributes source="widget/col_jqgrid"/>
+      </form:control>
+    </form:child>
+    <form:child xsi:type="form:Field" binding="address" id="address" name="address">
+      <form:control type="widget/col_jqgrid">
+        <form:attributes source="widget/col_jqgrid"/>
+      </form:control>
+    </form:child>
+    <form:child xsi:type="form:Field" binding="contact" id="contact" name="contact">
+      <form:control type="widget/col_jqgrid">
+        <form:attributes source="widget/col_jqgrid"/>
+      </form:control>
+    </form:child>
+    <form:child xsi:type="form:Field" binding="tel" id="tel" name="tel">
+      <form:control type="widget/col_jqgrid">
+        <form:attributes source="widget/col_jqgrid"/>
+      </form:control>
+    </form:child>
+    <form:child xsi:type="form:Field" binding="qty" id="qty" name="qty">
+      <form:control type="widget/col_jqgrid">
+        <form:attributes source="widget/col_jqgrid"/>
+      </form:control>
+    </form:child>
+  </form:child>
+  <form:child xsi:type="form:Group" id="newGroup" name="简单容器(DIV)">
+    <form:control type="container/div">
+      <form:attributes source="container/div"/>
+    </form:control>
+    <form:child xsi:type="form:Field" binding="$model.order.orderno" id="orderno1" name="orderno">
+      <form:control type="widget/text">
+        <form:attributes source="widget/text"/>
+      </form:control>
+    </form:child>
+    <form:child xsi:type="form:Field" binding="$model.order.custshipno" id="custshipno1" name="custshipno">
+      <form:control type="widget/text">
+        <form:attributes source="widget/text"/>
+      </form:control>
+    </form:child>
+    <form:child xsi:type="form:Field" binding="$model.order.customerid" id="customerid1" name="customerid">
+      <form:control type="widget/text">
+        <form:attributes source="widget/text"/>
+      </form:control>
+    </form:child>
+    <form:child xsi:type="form:Field" binding="$model.order.contractid" id="contractid1" name="contractid">
+      <form:control type="widget/text">
+        <form:attributes source="widget/text"/>
+      </form:control>
+    </form:child>
+    <form:child xsi:type="form:Field" binding="$model.order.userno" id="userno1" name="userno">
+      <form:control type="widget/text">
+        <form:attributes source="widget/text"/>
+      </form:control>
+    </form:child>
+    <form:child xsi:type="form:Field" binding="$model.order.dtdate" id="dtdate1" name="dtdate">
+      <form:control type="widget/date_picker">
+        <form:attributes source="widget/date_picker"/>
+      </form:control>
+    </form:child>
+    <form:child xsi:type="form:Field" binding="$model.order.address" id="address1" name="address">
+      <form:control type="widget/text">
+        <form:attributes source="widget/text"/>
+      </form:control>
+    </form:child>
+    <form:child xsi:type="form:Field" binding="$model.order.contact" id="contact1" name="contact">
+      <form:control type="widget/text">
+        <form:attributes source="widget/text"/>
+      </form:control>
+    </form:child>
+    <form:child xsi:type="form:Field" binding="$model.order.tel" id="tel1" name="tel">
+      <form:control type="widget/text">
+        <form:attributes source="widget/text"/>
+      </form:control>
+    </form:child>
+  </form:child>
+  <form:datasources>
+    <form:datasource xsi:type="form:Inputs"/>
+    <form:datasource xsi:type="form:PagingDataSource" id="order" name="列表型数据源" elementType="entity:demo.user.order" pageSize="10"/>
+  </form:datasources>
+  <form:scripts>
+
+order_onSelectRow:function(rowid,status,e){
+//
+	var orderno = $view.order.getCell(rowid,&quot;orderno&quot;);
+	var obj = $view.custshipno1.getDom();
+	obj.val(orderno);
+	
+	
+},
+
+buttonSearch_click:function(rowId,rowData,tableData){
+	//
+	alert(&quot;show&quot;)
+},
+
+buttonView_click:function(rowId,rowData,tableData){
+	Modal.open(&quot;f/user001&quot;,{},function(){
+    alert('有一个空参数，触发轻松多了！');
+});
+}</form:scripts>
+</form:Form>

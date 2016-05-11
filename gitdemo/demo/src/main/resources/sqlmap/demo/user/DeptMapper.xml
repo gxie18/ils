@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"><mapper namespace="demo.user.DeptMapper">	
+
+<!-- ElementID:column_sql,Generated=true -->
+<sql id="column_sql">
+		  SMDEPT.ilineid ,
+		  SMDEPT.vcdeptname ,
+		  SMDEPT.vctel ,
+		  SMDEPT.bactive ,
+		  SMDEPT.vcuserno ,
+		  SMDEPT.dtdate 
+</sql>
+
+<!-- ElementID:whereClause_sql,Generated=true -->
+<sql id="whereClause_sql">
+	    <if test="ilineid != null">and SMDEPT.ilineid = #{ilineid}</if>
+	    <if test="vcdeptname != null">and SMDEPT.vcdeptname = #{vcdeptname}</if>
+	    <if test="vctel != null">and SMDEPT.vctel = #{vctel}</if>
+	    <if test="bactive != null">and SMDEPT.bactive = #{bactive}</if>
+	    <if test="vcuserno != null">and SMDEPT.vcuserno = #{vcuserno}</if>
+	    <if test="dtdate != null">and SMDEPT.dtdate = #{dtdate}</if>
+</sql>
+
+
+<!-- ElementID:DeptResult,Generated=true -->
+<resultMap id="DeptResult" type="demo.user.Dept">
+	<id property="ilineid" column="ilineid"/>
+	<result property="vcdeptname" column="vcdeptname"/>
+	<result property="vctel" column="vctel"/>
+	<result property="bactive" column="bactive"/>
+	<result property="vcuserno" column="vcuserno"/>
+	<result property="dtdate" column="dtdate"/>
+</resultMap>
+
+
+<!-- ElementName:cache,Generated=true -->
+<cache type="C2_Default_Dao_Cache"/>
+
+<!-- ElementID:count,Generated=true -->
+<select id="count" parameterType="demo.user.Dept" resultType="int">
+	select count(*) from SMDEPT 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+<!-- ElementID:update,Generated=true -->
+<update id="update" parameterType="demo.user.Dept">
+	update SMDEPT
+<set>
+	<if test="vcdeptname != null">vcdeptname=#{vcdeptname,jdbcType=VARCHAR},</if>
+	<if test="vctel != null">vctel=#{vctel,jdbcType=VARCHAR},</if>
+	<if test="bactive != null">bactive=#{bactive,jdbcType=NUMERIC},</if>
+	<if test="vcuserno != null">vcuserno=#{vcuserno,jdbcType=VARCHAR},</if>
+	<if test="dtdate != null">dtdate=#{dtdate,jdbcType=DATE}</if>
+</set>
+<where>
+	<choose>
+        <when test="ilineid != null">and ilineid = #{ilineid}</when>
+        <otherwise>and ilineid = </otherwise>
+    </choose>
+</where>
+</update>
+
+<!-- ElementID:updateNull,Generated=true -->
+<update id="updateNull" parameterType="map">
+	update SMDEPT
+	<set>
+		<trim suffixOverrides=",">
+		    <if test="vcdeptname==null">vcdeptname = null,</if>
+		    <if test="vctel==null">vctel = null,</if>
+		    <if test="bactive==null">bactive = null,</if>
+		    <if test="vcuserno==null">vcuserno = null,</if>
+		    <if test="dtdate==null">dtdate = null,</if>
+		</trim>
+	</set>
+	<where>
+		<choose>
+			<when test="ilineid != null">and ilineid = #{ilineid}</when>
+			<otherwise>and ilineid = </otherwise>
+		</choose>
+	</where>
+</update>
+
+<!-- ElementID:delete,Generated=true -->
+<delete id="delete" parameterType="demo.user.Dept">
+    delete from SMDEPT where 1=1 and ilineid = #{ilineid}
+</delete>
+
+<!-- ElementID:select,Generated=true -->
+<select id="select" parameterType="demo.user.Dept" resultMap="DeptResult">
+	select 
+		<include refid="column_sql"/>
+	    from SMDEPT 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+
+<!-- ElementID:deleteBatch,Generated=true -->
+<delete id="deleteBatch" parameterType="List">
+	delete from SMDEPT where ilineid in
+<trim prefix="(" suffix=")" suffixOverrides=",">
+<foreach collection="list" item="entity" separator=",">
+	#{entity.ilineid}
+</foreach>
+</trim>
+</delete>
+
+<!-- ElementID:updateBatch,Generated=true -->
+<update id="updateBatch" parameterType="list">
+	<foreach collection="list" item="entity" open="begin" close=";end;" separator=";">
+			update SMDEPT
+	<set>
+	<if test="entity.vcdeptname != null">vcdeptname= #{entity.vcdeptname,jdbcType=VARCHAR},</if>
+	<if test="entity.vctel != null">vctel= #{entity.vctel,jdbcType=VARCHAR},</if>
+	<if test="entity.bactive != null">bactive= #{entity.bactive,jdbcType=NUMERIC},</if>
+	<if test="entity.vcuserno != null">vcuserno= #{entity.vcuserno,jdbcType=VARCHAR},</if>
+	<if test="entity.dtdate != null">dtdate= #{entity.dtdate,jdbcType=DATE}</if>
+	</set>
+		<where>
+			<choose>
+				<when test="entity.ilineid != null">and ilineid = #{entity.ilineid}</when>
+				<otherwise>and ilineid = </otherwise>
+			</choose>
+		</where>
+	</foreach>
+</update>
+
+<!-- ElementID:selectAll,Generated=true -->
+<select id="selectAll" resultMap="DeptResult">
+	select 
+		<include refid="column_sql"/>
+	    from SMDEPT 
+</select>
+
+<!-- ElementID:selectMany,Generated=true -->
+<select id="selectMany" parameterType="list" resultMap="DeptResult">
+select 
+	<include refid="column_sql"/> 
+	from SMDEPT 
+	where SMDEPT.ilineid in (
+<foreach collection="list" item="entity" separator="intersect">
+		select 
+		SMDEPT.ilineid
+	    from SMDEPT 
+		 <where>
+	        <if test="entity.ilineid != null">and SMDEPT.ilineid = #{entity.ilineid}</if>
+	        <if test="entity.vcdeptname != null">and SMDEPT.vcdeptname = #{entity.vcdeptname}</if>
+	        <if test="entity.vctel != null">and SMDEPT.vctel = #{entity.vctel}</if>
+	        <if test="entity.bactive != null">and SMDEPT.bactive = #{entity.bactive}</if>
+	        <if test="entity.vcuserno != null">and SMDEPT.vcuserno = #{entity.vcuserno}</if>
+	        <if test="entity.dtdate != null">and SMDEPT.dtdate = #{entity.dtdate}</if>
+		</where>
+</foreach>
+)
+</select>
+
+<!-- ElementID:selectByID,Generated=true -->
+<select id="selectByID" parameterType="java.lang.Double" resultMap="DeptResult">
+	select 
+		<include refid="column_sql"/>
+	    from SMDEPT 
+		 where SMDEPT.ilineid = #{ilineid,jdbcType=NUMERIC}
+</select>
+
+<!-- ElementID:selectByPage,Generated=true -->
+<select id="selectByPage" parameterType="demo.user.Dept" resultMap="DeptResult">
+	select 
+		<include refid="column_sql"/>
+	    from SMDEPT 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+
+<!-- ElementID:insert,Generated=true -->
+<insert id="insert" parameterType="demo.user.Dept">
+	<selectKey keyProperty="ilineid" resultType="java.lang.Double" order="BEFORE">
+         select SMDEPT_PK.NEXTVAL from dual
+     </selectKey>
+	insert into SMDEPT(
+	<trim prefixOverrides=",">
+	         <if test="ilineid != null">ilineid</if>
+	         <if test="vcdeptname != null">,vcdeptname</if>
+	         <if test="vctel != null">,vctel</if>
+	         <if test="bactive != null">,bactive</if>
+	         <if test="vcuserno != null">,vcuserno</if>
+	         <if test="dtdate != null">,dtdate</if>
+	 	 	 </trim>
+	 )
+	 values (
+	 <trim prefixOverrides=",">
+	         <if test="ilineid != null">#{ilineid,jdbcType=NUMERIC}</if>
+	         <if test="vcdeptname != null">,#{vcdeptname,jdbcType=VARCHAR}</if>
+	         <if test="vctel != null">,#{vctel,jdbcType=VARCHAR}</if>
+	         <if test="bactive != null">,#{bactive,jdbcType=NUMERIC}</if>
+	         <if test="vcuserno != null">,#{vcuserno,jdbcType=VARCHAR}</if>
+	         <if test="dtdate != null">,#{dtdate,jdbcType=DATE}</if>
+	 	 	 </trim>
+	 )
+</insert>
+
+<!-- ElementID:insertBatch,Generated=true -->
+<insert id="insertBatch" parameterType="list">
+	insert into SMDEPT (ilineid,vcdeptname,vctel,bactive,vcuserno,dtdate)
+		select  SMDEPT_PK.NEXTVAL , B.* from(
+			<foreach collection="list" item="entity" index="index" separator="union all">
+				select 
+	              #{entity.vcdeptname,jdbcType = VARCHAR},
+	              #{entity.vctel,jdbcType = VARCHAR},
+	              #{entity.bactive,jdbcType = NUMERIC},
+	              #{entity.vcuserno,jdbcType = VARCHAR},
+	              #{entity.dtdate,jdbcType = DATE}
+		        from dual
+</foreach>
+	    )B
+</insert>
+
+</mapper>

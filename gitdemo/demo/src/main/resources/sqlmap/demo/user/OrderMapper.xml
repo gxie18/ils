@@ -1,0 +1,562 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"><mapper namespace="demo.user.OrderMapper">	
+
+<!-- ElementID:column_sql,Generated=true -->
+<sql id="column_sql">
+		  ODORDER.lineid ,
+		  ODORDER.orderno ,
+		  ODORDER.custshipno ,
+		  ODORDER.customerid ,
+		  ODORDER.contractid ,
+		  ODORDER.userno ,
+		  ODORDER.dtdate ,
+		  ODORDER.address ,
+		  ODORDER.contact ,
+		  ODORDER.tel ,
+		  ODORDER.address2 ,
+		  ODORDER.contact2 ,
+		  ODORDER.tel2 ,
+		  ODORDER.startprovince ,
+		  ODORDER.startcityid ,
+		  ODORDER.startcity ,
+		  ODORDER.endprovince ,
+		  ODORDER.endcityid ,
+		  ODORDER.endcity ,
+		  ODORDER.shipdate ,
+		  ODORDER.comedate ,
+		  ODORDER.urgent ,
+		  ODORDER.itemid ,
+		  ODORDER.itemno ,
+		  ODORDER.itemname ,
+		  ODORDER.unit ,
+		  ODORDER.qty ,
+		  ODORDER.shipedqty ,
+		  ODORDER.pid ,
+		  ODORDER.orderid ,
+		  ODORDER.istrans ,
+		  ODORDER.transcityname ,
+		  ODORDER.memo ,
+		  ODORDER.payid ,
+		  ODORDER.pay ,
+		  ODORDER.payed ,
+		  ODORDER.isclose ,
+		  ODORDER.closedate ,
+		  ODORDER.closeuserno ,
+		  ODORDER.closereason 
+</sql>
+
+<!-- ElementID:whereClause_sql,Generated=true -->
+<sql id="whereClause_sql">
+	    <if test="lineid != null">and ODORDER.lineid = #{lineid}</if>
+	    <if test="orderno != null">and ODORDER.orderno = #{orderno}</if>
+	    <if test="custshipno != null">and ODORDER.custshipno = #{custshipno}</if>
+	    <if test="customerid != null">and ODORDER.customerid = #{customerid}</if>
+	    <if test="contractid != null">and ODORDER.contractid = #{contractid}</if>
+	    <if test="userno != null">and ODORDER.userno = #{userno}</if>
+	    <if test="dtdate != null">and ODORDER.dtdate = #{dtdate}</if>
+	    <if test="address != null">and ODORDER.address = #{address}</if>
+	    <if test="contact != null">and ODORDER.contact = #{contact}</if>
+	    <if test="tel != null">and ODORDER.tel = #{tel}</if>
+	    <if test="address2 != null">and ODORDER.address2 = #{address2}</if>
+	    <if test="contact2 != null">and ODORDER.contact2 = #{contact2}</if>
+	    <if test="tel2 != null">and ODORDER.tel2 = #{tel2}</if>
+	    <if test="startprovince != null">and ODORDER.startprovince = #{startprovince}</if>
+	    <if test="startcityid != null">and ODORDER.startcityid = #{startcityid}</if>
+	    <if test="startcity != null">and ODORDER.startcity = #{startcity}</if>
+	    <if test="endprovince != null">and ODORDER.endprovince = #{endprovince}</if>
+	    <if test="endcityid != null">and ODORDER.endcityid = #{endcityid}</if>
+	    <if test="endcity != null">and ODORDER.endcity = #{endcity}</if>
+	    <if test="shipdate != null">and ODORDER.shipdate = #{shipdate}</if>
+	    <if test="comedate != null">and ODORDER.comedate = #{comedate}</if>
+	    <if test="urgent != null">and ODORDER.urgent = #{urgent}</if>
+	    <if test="itemid != null">and ODORDER.itemid = #{itemid}</if>
+	    <if test="itemno != null">and ODORDER.itemno = #{itemno}</if>
+	    <if test="itemname != null">and ODORDER.itemname = #{itemname}</if>
+	    <if test="unit != null">and ODORDER.unit = #{unit}</if>
+	    <if test="qty != null">and ODORDER.qty = #{qty}</if>
+	    <if test="shipedqty != null">and ODORDER.shipedqty = #{shipedqty}</if>
+	    <if test="pid != null">and ODORDER.pid = #{pid}</if>
+	    <if test="orderid != null">and ODORDER.orderid = #{orderid}</if>
+	    <if test="istrans != null">and ODORDER.istrans = #{istrans}</if>
+	    <if test="transcityname != null">and ODORDER.transcityname = #{transcityname}</if>
+	    <if test="memo != null">and ODORDER.memo = #{memo}</if>
+	    <if test="payid != null">and ODORDER.payid = #{payid}</if>
+	    <if test="pay != null">and ODORDER.pay = #{pay}</if>
+	    <if test="payed != null">and ODORDER.payed = #{payed}</if>
+	    <if test="isclose != null">and ODORDER.isclose = #{isclose}</if>
+	    <if test="closedate != null">and ODORDER.closedate = #{closedate}</if>
+	    <if test="closeuserno != null">and ODORDER.closeuserno = #{closeuserno}</if>
+	    <if test="closereason != null">and ODORDER.closereason = #{closereason}</if>
+</sql>
+
+
+<!-- ElementID:OrderResult,Generated=true -->
+<resultMap id="OrderResult" type="demo.user.Order">
+	<id property="lineid" column="lineid"/>
+	<result property="orderno" column="orderno"/>
+	<result property="custshipno" column="custshipno"/>
+	<result property="customerid" column="customerid"/>
+	<result property="contractid" column="contractid"/>
+	<result property="userno" column="userno"/>
+	<result property="dtdate" column="dtdate"/>
+	<result property="address" column="address"/>
+	<result property="contact" column="contact"/>
+	<result property="tel" column="tel"/>
+	<result property="address2" column="address2"/>
+	<result property="contact2" column="contact2"/>
+	<result property="tel2" column="tel2"/>
+	<result property="startprovince" column="startprovince"/>
+	<result property="startcityid" column="startcityid"/>
+	<result property="startcity" column="startcity"/>
+	<result property="endprovince" column="endprovince"/>
+	<result property="endcityid" column="endcityid"/>
+	<result property="endcity" column="endcity"/>
+	<result property="shipdate" column="shipdate"/>
+	<result property="comedate" column="comedate"/>
+	<result property="urgent" column="urgent"/>
+	<result property="itemid" column="itemid"/>
+	<result property="itemno" column="itemno"/>
+	<result property="itemname" column="itemname"/>
+	<result property="unit" column="unit"/>
+	<result property="qty" column="qty"/>
+	<result property="shipedqty" column="shipedqty"/>
+	<result property="pid" column="pid"/>
+	<result property="orderid" column="orderid"/>
+	<result property="istrans" column="istrans"/>
+	<result property="transcityname" column="transcityname"/>
+	<result property="memo" column="memo"/>
+	<result property="payid" column="payid"/>
+	<result property="pay" column="pay"/>
+	<result property="payed" column="payed"/>
+	<result property="isclose" column="isclose"/>
+	<result property="closedate" column="closedate"/>
+	<result property="closeuserno" column="closeuserno"/>
+	<result property="closereason" column="closereason"/>
+</resultMap>
+
+
+<!-- ElementName:cache,Generated=true -->
+<cache type="C2_Default_Dao_Cache"/>
+
+<!-- ElementID:count,Generated=true -->
+<select id="count" parameterType="demo.user.Order" resultType="int">
+	select count(*) from ODORDER 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+<!-- ElementID:update,Generated=true -->
+<update id="update" parameterType="demo.user.Order">
+	update ODORDER
+<set>
+	<if test="orderno != null">orderno=#{orderno,jdbcType=VARCHAR},</if>
+	<if test="custshipno != null">custshipno=#{custshipno,jdbcType=VARCHAR},</if>
+	<if test="customerid != null">customerid=#{customerid,jdbcType=NUMERIC},</if>
+	<if test="contractid != null">contractid=#{contractid,jdbcType=NUMERIC},</if>
+	<if test="userno != null">userno=#{userno,jdbcType=VARCHAR},</if>
+	<if test="dtdate != null">dtdate=#{dtdate,jdbcType=DATE},</if>
+	<if test="address != null">address=#{address,jdbcType=VARCHAR},</if>
+	<if test="contact != null">contact=#{contact,jdbcType=VARCHAR},</if>
+	<if test="tel != null">tel=#{tel,jdbcType=VARCHAR},</if>
+	<if test="address2 != null">address2=#{address2,jdbcType=VARCHAR},</if>
+	<if test="contact2 != null">contact2=#{contact2,jdbcType=VARCHAR},</if>
+	<if test="tel2 != null">tel2=#{tel2,jdbcType=VARCHAR},</if>
+	<if test="startprovince != null">startprovince=#{startprovince,jdbcType=VARCHAR},</if>
+	<if test="startcityid != null">startcityid=#{startcityid,jdbcType=NUMERIC},</if>
+	<if test="startcity != null">startcity=#{startcity,jdbcType=VARCHAR},</if>
+	<if test="endprovince != null">endprovince=#{endprovince,jdbcType=VARCHAR},</if>
+	<if test="endcityid != null">endcityid=#{endcityid,jdbcType=NUMERIC},</if>
+	<if test="endcity != null">endcity=#{endcity,jdbcType=VARCHAR},</if>
+	<if test="shipdate != null">shipdate=#{shipdate,jdbcType=DATE},</if>
+	<if test="comedate != null">comedate=#{comedate,jdbcType=DATE},</if>
+	<if test="urgent != null">urgent=#{urgent,jdbcType=NUMERIC},</if>
+	<if test="itemid != null">itemid=#{itemid,jdbcType=NUMERIC},</if>
+	<if test="itemno != null">itemno=#{itemno,jdbcType=VARCHAR},</if>
+	<if test="itemname != null">itemname=#{itemname,jdbcType=VARCHAR},</if>
+	<if test="unit != null">unit=#{unit,jdbcType=VARCHAR},</if>
+	<if test="qty != null">qty=#{qty,jdbcType=NUMERIC},</if>
+	<if test="shipedqty != null">shipedqty=#{shipedqty,jdbcType=NUMERIC},</if>
+	<if test="pid != null">pid=#{pid,jdbcType=NUMERIC},</if>
+	<if test="orderid != null">orderid=#{orderid,jdbcType=NUMERIC},</if>
+	<if test="istrans != null">istrans=#{istrans,jdbcType=NUMERIC},</if>
+	<if test="transcityname != null">transcityname=#{transcityname,jdbcType=VARCHAR},</if>
+	<if test="memo != null">memo=#{memo,jdbcType=VARCHAR},</if>
+	<if test="payid != null">payid=#{payid,jdbcType=NUMERIC},</if>
+	<if test="pay != null">pay=#{pay,jdbcType=NUMERIC},</if>
+	<if test="payed != null">payed=#{payed,jdbcType=NUMERIC},</if>
+	<if test="isclose != null">isclose=#{isclose,jdbcType=NUMERIC},</if>
+	<if test="closedate != null">closedate=#{closedate,jdbcType=DATE},</if>
+	<if test="closeuserno != null">closeuserno=#{closeuserno,jdbcType=VARCHAR},</if>
+	<if test="closereason != null">closereason=#{closereason,jdbcType=VARCHAR}</if>
+</set>
+<where>
+	<choose>
+        <when test="lineid != null">and lineid = #{lineid}</when>
+        <otherwise>and lineid = </otherwise>
+    </choose>
+</where>
+</update>
+
+<!-- ElementID:updateNull,Generated=true -->
+<update id="updateNull" parameterType="map">
+	update ODORDER
+	<set>
+		<trim suffixOverrides=",">
+		    <if test="orderno==null">orderno = null,</if>
+		    <if test="custshipno==null">custshipno = null,</if>
+		    <if test="customerid==null">customerid = null,</if>
+		    <if test="contractid==null">contractid = null,</if>
+		    <if test="userno==null">userno = null,</if>
+		    <if test="dtdate==null">dtdate = null,</if>
+		    <if test="address==null">address = null,</if>
+		    <if test="contact==null">contact = null,</if>
+		    <if test="tel==null">tel = null,</if>
+		    <if test="address2==null">address2 = null,</if>
+		    <if test="contact2==null">contact2 = null,</if>
+		    <if test="tel2==null">tel2 = null,</if>
+		    <if test="startprovince==null">startprovince = null,</if>
+		    <if test="startcityid==null">startcityid = null,</if>
+		    <if test="startcity==null">startcity = null,</if>
+		    <if test="endprovince==null">endprovince = null,</if>
+		    <if test="endcityid==null">endcityid = null,</if>
+		    <if test="endcity==null">endcity = null,</if>
+		    <if test="shipdate==null">shipdate = null,</if>
+		    <if test="comedate==null">comedate = null,</if>
+		    <if test="urgent==null">urgent = null,</if>
+		    <if test="itemid==null">itemid = null,</if>
+		    <if test="itemno==null">itemno = null,</if>
+		    <if test="itemname==null">itemname = null,</if>
+		    <if test="unit==null">unit = null,</if>
+		    <if test="qty==null">qty = null,</if>
+		    <if test="shipedqty==null">shipedqty = null,</if>
+		    <if test="pid==null">pid = null,</if>
+		    <if test="orderid==null">orderid = null,</if>
+		    <if test="istrans==null">istrans = null,</if>
+		    <if test="transcityname==null">transcityname = null,</if>
+		    <if test="memo==null">memo = null,</if>
+		    <if test="payid==null">payid = null,</if>
+		    <if test="pay==null">pay = null,</if>
+		    <if test="payed==null">payed = null,</if>
+		    <if test="isclose==null">isclose = null,</if>
+		    <if test="closedate==null">closedate = null,</if>
+		    <if test="closeuserno==null">closeuserno = null,</if>
+		    <if test="closereason==null">closereason = null,</if>
+		</trim>
+	</set>
+	<where>
+		<choose>
+			<when test="lineid != null">and lineid = #{lineid}</when>
+			<otherwise>and lineid = </otherwise>
+		</choose>
+	</where>
+</update>
+
+<!-- ElementID:delete,Generated=true -->
+<delete id="delete" parameterType="demo.user.Order">
+    delete from ODORDER where 1=1 and lineid = #{lineid}
+</delete>
+
+<!-- ElementID:select,Generated=true -->
+<select id="select" parameterType="demo.user.Order" resultMap="OrderResult">
+	select 
+		<include refid="column_sql"/>
+	    from ODORDER 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+
+<!-- ElementID:deleteBatch,Generated=true -->
+<delete id="deleteBatch" parameterType="List">
+	delete from ODORDER where lineid in
+<trim prefix="(" suffix=")" suffixOverrides=",">
+<foreach collection="list" item="entity" separator=",">
+	#{entity.lineid}
+</foreach>
+</trim>
+</delete>
+
+<!-- ElementID:updateBatch,Generated=true -->
+<update id="updateBatch" parameterType="list">
+	<foreach collection="list" item="entity" open="begin" close=";end;" separator=";">
+			update ODORDER
+	<set>
+	<if test="entity.orderno != null">orderno= #{entity.orderno,jdbcType=VARCHAR},</if>
+	<if test="entity.custshipno != null">custshipno= #{entity.custshipno,jdbcType=VARCHAR},</if>
+	<if test="entity.customerid != null">customerid= #{entity.customerid,jdbcType=NUMERIC},</if>
+	<if test="entity.contractid != null">contractid= #{entity.contractid,jdbcType=NUMERIC},</if>
+	<if test="entity.userno != null">userno= #{entity.userno,jdbcType=VARCHAR},</if>
+	<if test="entity.dtdate != null">dtdate= #{entity.dtdate,jdbcType=DATE},</if>
+	<if test="entity.address != null">address= #{entity.address,jdbcType=VARCHAR},</if>
+	<if test="entity.contact != null">contact= #{entity.contact,jdbcType=VARCHAR},</if>
+	<if test="entity.tel != null">tel= #{entity.tel,jdbcType=VARCHAR},</if>
+	<if test="entity.address2 != null">address2= #{entity.address2,jdbcType=VARCHAR},</if>
+	<if test="entity.contact2 != null">contact2= #{entity.contact2,jdbcType=VARCHAR},</if>
+	<if test="entity.tel2 != null">tel2= #{entity.tel2,jdbcType=VARCHAR},</if>
+	<if test="entity.startprovince != null">startprovince= #{entity.startprovince,jdbcType=VARCHAR},</if>
+	<if test="entity.startcityid != null">startcityid= #{entity.startcityid,jdbcType=NUMERIC},</if>
+	<if test="entity.startcity != null">startcity= #{entity.startcity,jdbcType=VARCHAR},</if>
+	<if test="entity.endprovince != null">endprovince= #{entity.endprovince,jdbcType=VARCHAR},</if>
+	<if test="entity.endcityid != null">endcityid= #{entity.endcityid,jdbcType=NUMERIC},</if>
+	<if test="entity.endcity != null">endcity= #{entity.endcity,jdbcType=VARCHAR},</if>
+	<if test="entity.shipdate != null">shipdate= #{entity.shipdate,jdbcType=DATE},</if>
+	<if test="entity.comedate != null">comedate= #{entity.comedate,jdbcType=DATE},</if>
+	<if test="entity.urgent != null">urgent= #{entity.urgent,jdbcType=NUMERIC},</if>
+	<if test="entity.itemid != null">itemid= #{entity.itemid,jdbcType=NUMERIC},</if>
+	<if test="entity.itemno != null">itemno= #{entity.itemno,jdbcType=VARCHAR},</if>
+	<if test="entity.itemname != null">itemname= #{entity.itemname,jdbcType=VARCHAR},</if>
+	<if test="entity.unit != null">unit= #{entity.unit,jdbcType=VARCHAR},</if>
+	<if test="entity.qty != null">qty= #{entity.qty,jdbcType=NUMERIC},</if>
+	<if test="entity.shipedqty != null">shipedqty= #{entity.shipedqty,jdbcType=NUMERIC},</if>
+	<if test="entity.pid != null">pid= #{entity.pid,jdbcType=NUMERIC},</if>
+	<if test="entity.orderid != null">orderid= #{entity.orderid,jdbcType=NUMERIC},</if>
+	<if test="entity.istrans != null">istrans= #{entity.istrans,jdbcType=NUMERIC},</if>
+	<if test="entity.transcityname != null">transcityname= #{entity.transcityname,jdbcType=VARCHAR},</if>
+	<if test="entity.memo != null">memo= #{entity.memo,jdbcType=VARCHAR},</if>
+	<if test="entity.payid != null">payid= #{entity.payid,jdbcType=NUMERIC},</if>
+	<if test="entity.pay != null">pay= #{entity.pay,jdbcType=NUMERIC},</if>
+	<if test="entity.payed != null">payed= #{entity.payed,jdbcType=NUMERIC},</if>
+	<if test="entity.isclose != null">isclose= #{entity.isclose,jdbcType=NUMERIC},</if>
+	<if test="entity.closedate != null">closedate= #{entity.closedate,jdbcType=DATE},</if>
+	<if test="entity.closeuserno != null">closeuserno= #{entity.closeuserno,jdbcType=VARCHAR},</if>
+	<if test="entity.closereason != null">closereason= #{entity.closereason,jdbcType=VARCHAR}</if>
+	</set>
+		<where>
+			<choose>
+				<when test="entity.lineid != null">and lineid = #{entity.lineid}</when>
+				<otherwise>and lineid = </otherwise>
+			</choose>
+		</where>
+	</foreach>
+</update>
+
+<!-- ElementID:selectAll,Generated=true -->
+<select id="selectAll" resultMap="OrderResult">
+	select 
+		<include refid="column_sql"/>
+	    from ODORDER 
+</select>
+
+<!-- ElementID:selectMany,Generated=true -->
+<select id="selectMany" parameterType="list" resultMap="OrderResult">
+select 
+	<include refid="column_sql"/> 
+	from ODORDER 
+	where ODORDER.lineid in (
+<foreach collection="list" item="entity" separator="intersect">
+		select 
+		ODORDER.lineid
+	    from ODORDER 
+		 <where>
+	        <if test="entity.lineid != null">and ODORDER.lineid = #{entity.lineid}</if>
+	        <if test="entity.orderno != null">and ODORDER.orderno = #{entity.orderno}</if>
+	        <if test="entity.custshipno != null">and ODORDER.custshipno = #{entity.custshipno}</if>
+	        <if test="entity.customerid != null">and ODORDER.customerid = #{entity.customerid}</if>
+	        <if test="entity.contractid != null">and ODORDER.contractid = #{entity.contractid}</if>
+	        <if test="entity.userno != null">and ODORDER.userno = #{entity.userno}</if>
+	        <if test="entity.dtdate != null">and ODORDER.dtdate = #{entity.dtdate}</if>
+	        <if test="entity.address != null">and ODORDER.address = #{entity.address}</if>
+	        <if test="entity.contact != null">and ODORDER.contact = #{entity.contact}</if>
+	        <if test="entity.tel != null">and ODORDER.tel = #{entity.tel}</if>
+	        <if test="entity.address2 != null">and ODORDER.address2 = #{entity.address2}</if>
+	        <if test="entity.contact2 != null">and ODORDER.contact2 = #{entity.contact2}</if>
+	        <if test="entity.tel2 != null">and ODORDER.tel2 = #{entity.tel2}</if>
+	        <if test="entity.startprovince != null">and ODORDER.startprovince = #{entity.startprovince}</if>
+	        <if test="entity.startcityid != null">and ODORDER.startcityid = #{entity.startcityid}</if>
+	        <if test="entity.startcity != null">and ODORDER.startcity = #{entity.startcity}</if>
+	        <if test="entity.endprovince != null">and ODORDER.endprovince = #{entity.endprovince}</if>
+	        <if test="entity.endcityid != null">and ODORDER.endcityid = #{entity.endcityid}</if>
+	        <if test="entity.endcity != null">and ODORDER.endcity = #{entity.endcity}</if>
+	        <if test="entity.shipdate != null">and ODORDER.shipdate = #{entity.shipdate}</if>
+	        <if test="entity.comedate != null">and ODORDER.comedate = #{entity.comedate}</if>
+	        <if test="entity.urgent != null">and ODORDER.urgent = #{entity.urgent}</if>
+	        <if test="entity.itemid != null">and ODORDER.itemid = #{entity.itemid}</if>
+	        <if test="entity.itemno != null">and ODORDER.itemno = #{entity.itemno}</if>
+	        <if test="entity.itemname != null">and ODORDER.itemname = #{entity.itemname}</if>
+	        <if test="entity.unit != null">and ODORDER.unit = #{entity.unit}</if>
+	        <if test="entity.qty != null">and ODORDER.qty = #{entity.qty}</if>
+	        <if test="entity.shipedqty != null">and ODORDER.shipedqty = #{entity.shipedqty}</if>
+	        <if test="entity.pid != null">and ODORDER.pid = #{entity.pid}</if>
+	        <if test="entity.orderid != null">and ODORDER.orderid = #{entity.orderid}</if>
+	        <if test="entity.istrans != null">and ODORDER.istrans = #{entity.istrans}</if>
+	        <if test="entity.transcityname != null">and ODORDER.transcityname = #{entity.transcityname}</if>
+	        <if test="entity.memo != null">and ODORDER.memo = #{entity.memo}</if>
+	        <if test="entity.payid != null">and ODORDER.payid = #{entity.payid}</if>
+	        <if test="entity.pay != null">and ODORDER.pay = #{entity.pay}</if>
+	        <if test="entity.payed != null">and ODORDER.payed = #{entity.payed}</if>
+	        <if test="entity.isclose != null">and ODORDER.isclose = #{entity.isclose}</if>
+	        <if test="entity.closedate != null">and ODORDER.closedate = #{entity.closedate}</if>
+	        <if test="entity.closeuserno != null">and ODORDER.closeuserno = #{entity.closeuserno}</if>
+	        <if test="entity.closereason != null">and ODORDER.closereason = #{entity.closereason}</if>
+		</where>
+</foreach>
+)
+</select>
+
+<!-- ElementID:selectByID,Generated=true -->
+<select id="selectByID" parameterType="java.lang.Double" resultMap="OrderResult">
+	select 
+		<include refid="column_sql"/>
+	    from ODORDER 
+		 where ODORDER.lineid = #{lineid,jdbcType=NUMERIC}
+</select>
+
+<!-- ElementID:selectByPage,Generated=true -->
+<select id="selectByPage" parameterType="demo.user.Order" resultMap="OrderResult">
+	select 
+		<include refid="column_sql"/>
+	    from ODORDER 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+
+<!-- ElementID:insert,Generated=true -->
+<insert id="insert" parameterType="demo.user.Order">
+	<selectKey keyProperty="lineid" resultType="java.lang.Double" order="BEFORE">
+         select ODORDER_PK.NEXTVAL from dual
+     </selectKey>
+	insert into ODORDER(
+	<trim prefixOverrides=",">
+	         <if test="lineid != null">lineid</if>
+	         <if test="orderno != null">,orderno</if>
+	         <if test="custshipno != null">,custshipno</if>
+	         <if test="customerid != null">,customerid</if>
+	         <if test="contractid != null">,contractid</if>
+	         <if test="userno != null">,userno</if>
+	         <if test="dtdate != null">,dtdate</if>
+	         <if test="address != null">,address</if>
+	         <if test="contact != null">,contact</if>
+	         <if test="tel != null">,tel</if>
+	         <if test="address2 != null">,address2</if>
+	         <if test="contact2 != null">,contact2</if>
+	         <if test="tel2 != null">,tel2</if>
+	         <if test="startprovince != null">,startprovince</if>
+	         <if test="startcityid != null">,startcityid</if>
+	         <if test="startcity != null">,startcity</if>
+	         <if test="endprovince != null">,endprovince</if>
+	         <if test="endcityid != null">,endcityid</if>
+	         <if test="endcity != null">,endcity</if>
+	         <if test="shipdate != null">,shipdate</if>
+	         <if test="comedate != null">,comedate</if>
+	         <if test="urgent != null">,urgent</if>
+	         <if test="itemid != null">,itemid</if>
+	         <if test="itemno != null">,itemno</if>
+	         <if test="itemname != null">,itemname</if>
+	         <if test="unit != null">,unit</if>
+	         <if test="qty != null">,qty</if>
+	         <if test="shipedqty != null">,shipedqty</if>
+	         <if test="pid != null">,pid</if>
+	         <if test="orderid != null">,orderid</if>
+	         <if test="istrans != null">,istrans</if>
+	         <if test="transcityname != null">,transcityname</if>
+	         <if test="memo != null">,memo</if>
+	         <if test="payid != null">,payid</if>
+	         <if test="pay != null">,pay</if>
+	         <if test="payed != null">,payed</if>
+	         <if test="isclose != null">,isclose</if>
+	         <if test="closedate != null">,closedate</if>
+	         <if test="closeuserno != null">,closeuserno</if>
+	         <if test="closereason != null">,closereason</if>
+	 	 	 </trim>
+	 )
+	 values (
+	 <trim prefixOverrides=",">
+	         <if test="lineid != null">#{lineid,jdbcType=NUMERIC}</if>
+	         <if test="orderno != null">,#{orderno,jdbcType=VARCHAR}</if>
+	         <if test="custshipno != null">,#{custshipno,jdbcType=VARCHAR}</if>
+	         <if test="customerid != null">,#{customerid,jdbcType=NUMERIC}</if>
+	         <if test="contractid != null">,#{contractid,jdbcType=NUMERIC}</if>
+	         <if test="userno != null">,#{userno,jdbcType=VARCHAR}</if>
+	         <if test="dtdate != null">,#{dtdate,jdbcType=DATE}</if>
+	         <if test="address != null">,#{address,jdbcType=VARCHAR}</if>
+	         <if test="contact != null">,#{contact,jdbcType=VARCHAR}</if>
+	         <if test="tel != null">,#{tel,jdbcType=VARCHAR}</if>
+	         <if test="address2 != null">,#{address2,jdbcType=VARCHAR}</if>
+	         <if test="contact2 != null">,#{contact2,jdbcType=VARCHAR}</if>
+	         <if test="tel2 != null">,#{tel2,jdbcType=VARCHAR}</if>
+	         <if test="startprovince != null">,#{startprovince,jdbcType=VARCHAR}</if>
+	         <if test="startcityid != null">,#{startcityid,jdbcType=NUMERIC}</if>
+	         <if test="startcity != null">,#{startcity,jdbcType=VARCHAR}</if>
+	         <if test="endprovince != null">,#{endprovince,jdbcType=VARCHAR}</if>
+	         <if test="endcityid != null">,#{endcityid,jdbcType=NUMERIC}</if>
+	         <if test="endcity != null">,#{endcity,jdbcType=VARCHAR}</if>
+	         <if test="shipdate != null">,#{shipdate,jdbcType=DATE}</if>
+	         <if test="comedate != null">,#{comedate,jdbcType=DATE}</if>
+	         <if test="urgent != null">,#{urgent,jdbcType=NUMERIC}</if>
+	         <if test="itemid != null">,#{itemid,jdbcType=NUMERIC}</if>
+	         <if test="itemno != null">,#{itemno,jdbcType=VARCHAR}</if>
+	         <if test="itemname != null">,#{itemname,jdbcType=VARCHAR}</if>
+	         <if test="unit != null">,#{unit,jdbcType=VARCHAR}</if>
+	         <if test="qty != null">,#{qty,jdbcType=NUMERIC}</if>
+	         <if test="shipedqty != null">,#{shipedqty,jdbcType=NUMERIC}</if>
+	         <if test="pid != null">,#{pid,jdbcType=NUMERIC}</if>
+	         <if test="orderid != null">,#{orderid,jdbcType=NUMERIC}</if>
+	         <if test="istrans != null">,#{istrans,jdbcType=NUMERIC}</if>
+	         <if test="transcityname != null">,#{transcityname,jdbcType=VARCHAR}</if>
+	         <if test="memo != null">,#{memo,jdbcType=VARCHAR}</if>
+	         <if test="payid != null">,#{payid,jdbcType=NUMERIC}</if>
+	         <if test="pay != null">,#{pay,jdbcType=NUMERIC}</if>
+	         <if test="payed != null">,#{payed,jdbcType=NUMERIC}</if>
+	         <if test="isclose != null">,#{isclose,jdbcType=NUMERIC}</if>
+	         <if test="closedate != null">,#{closedate,jdbcType=DATE}</if>
+	         <if test="closeuserno != null">,#{closeuserno,jdbcType=VARCHAR}</if>
+	         <if test="closereason != null">,#{closereason,jdbcType=VARCHAR}</if>
+	 	 	 </trim>
+	 )
+</insert>
+
+<!-- ElementID:insertBatch,Generated=true -->
+<insert id="insertBatch" parameterType="list">
+	insert into ODORDER (lineid,orderno,custshipno,customerid,contractid,userno,dtdate,address,contact,tel,address2,contact2,tel2,startprovince,startcityid,startcity,endprovince,endcityid,endcity,shipdate,comedate,urgent,itemid,itemno,itemname,unit,qty,shipedqty,pid,orderid,istrans,transcityname,memo,payid,pay,payed,isclose,closedate,closeuserno,closereason)
+		select  ODORDER_PK.NEXTVAL , B.* from(
+			<foreach collection="list" item="entity" index="index" separator="union all">
+				select 
+	              #{entity.orderno,jdbcType = VARCHAR},
+	              #{entity.custshipno,jdbcType = VARCHAR},
+	              #{entity.customerid,jdbcType = NUMERIC},
+	              #{entity.contractid,jdbcType = NUMERIC},
+	              #{entity.userno,jdbcType = VARCHAR},
+	              #{entity.dtdate,jdbcType = DATE},
+	              #{entity.address,jdbcType = VARCHAR},
+	              #{entity.contact,jdbcType = VARCHAR},
+	              #{entity.tel,jdbcType = VARCHAR},
+	              #{entity.address2,jdbcType = VARCHAR},
+	              #{entity.contact2,jdbcType = VARCHAR},
+	              #{entity.tel2,jdbcType = VARCHAR},
+	              #{entity.startprovince,jdbcType = VARCHAR},
+	              #{entity.startcityid,jdbcType = NUMERIC},
+	              #{entity.startcity,jdbcType = VARCHAR},
+	              #{entity.endprovince,jdbcType = VARCHAR},
+	              #{entity.endcityid,jdbcType = NUMERIC},
+	              #{entity.endcity,jdbcType = VARCHAR},
+	              #{entity.shipdate,jdbcType = DATE},
+	              #{entity.comedate,jdbcType = DATE},
+	              #{entity.urgent,jdbcType = NUMERIC},
+	              #{entity.itemid,jdbcType = NUMERIC},
+	              #{entity.itemno,jdbcType = VARCHAR},
+	              #{entity.itemname,jdbcType = VARCHAR},
+	              #{entity.unit,jdbcType = VARCHAR},
+	              #{entity.qty,jdbcType = NUMERIC},
+	              #{entity.shipedqty,jdbcType = NUMERIC},
+	              #{entity.pid,jdbcType = NUMERIC},
+	              #{entity.orderid,jdbcType = NUMERIC},
+	              #{entity.istrans,jdbcType = NUMERIC},
+	              #{entity.transcityname,jdbcType = VARCHAR},
+	              #{entity.memo,jdbcType = VARCHAR},
+	              #{entity.payid,jdbcType = NUMERIC},
+	              #{entity.pay,jdbcType = NUMERIC},
+	              #{entity.payed,jdbcType = NUMERIC},
+	              #{entity.isclose,jdbcType = NUMERIC},
+	              #{entity.closedate,jdbcType = DATE},
+	              #{entity.closeuserno,jdbcType = VARCHAR},
+	              #{entity.closereason,jdbcType = VARCHAR}
+		        from dual
+</foreach>
+	    )B
+</insert>
+
+</mapper>

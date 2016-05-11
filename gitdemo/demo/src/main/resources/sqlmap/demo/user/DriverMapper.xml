@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"><mapper namespace="demo.user.DriverMapper">	
+
+<!-- ElementID:column_sql,Generated=true -->
+<sql id="column_sql">
+		  CADRIVER.lineid ,
+		  CADRIVER.fleetid ,
+		  CADRIVER.driverno ,
+		  CADRIVER.driverlicense ,
+		  CADRIVER.drivername ,
+		  CADRIVER.cardno ,
+		  CADRIVER.homeaddress ,
+		  CADRIVER.issuingorg ,
+		  CADRIVER.getcarddate ,
+		  CADRIVER.mobile ,
+		  CADRIVER.hometel ,
+		  CADRIVER.contact ,
+		  CADRIVER.tel ,
+		  CADRIVER.relationship ,
+		  CADRIVER.memo ,
+		  CADRIVER.drivertype ,
+		  CADRIVER.dtdate ,
+		  CADRIVER.userno ,
+		  CADRIVER.active ,
+		  CADRIVER.locationdate ,
+		  CADRIVER.province ,
+		  CADRIVER.city ,
+		  CADRIVER.address ,
+		  CADRIVER.locationmemo 
+</sql>
+
+<!-- ElementID:whereClause_sql,Generated=true -->
+<sql id="whereClause_sql">
+	    <if test="lineid != null">and CADRIVER.lineid = #{lineid}</if>
+	    <if test="fleetid != null">and CADRIVER.fleetid = #{fleetid}</if>
+	    <if test="driverno != null">and CADRIVER.driverno = #{driverno}</if>
+	    <if test="driverlicense != null">and CADRIVER.driverlicense = #{driverlicense}</if>
+	    <if test="drivername != null">and CADRIVER.drivername = #{drivername}</if>
+	    <if test="cardno != null">and CADRIVER.cardno = #{cardno}</if>
+	    <if test="homeaddress != null">and CADRIVER.homeaddress = #{homeaddress}</if>
+	    <if test="issuingorg != null">and CADRIVER.issuingorg = #{issuingorg}</if>
+	    <if test="getcarddate != null">and CADRIVER.getcarddate = #{getcarddate}</if>
+	    <if test="mobile != null">and CADRIVER.mobile = #{mobile}</if>
+	    <if test="hometel != null">and CADRIVER.hometel = #{hometel}</if>
+	    <if test="contact != null">and CADRIVER.contact = #{contact}</if>
+	    <if test="tel != null">and CADRIVER.tel = #{tel}</if>
+	    <if test="relationship != null">and CADRIVER.relationship = #{relationship}</if>
+	    <if test="memo != null">and CADRIVER.memo = #{memo}</if>
+	    <if test="drivertype != null">and CADRIVER.drivertype = #{drivertype}</if>
+	    <if test="dtdate != null">and CADRIVER.dtdate = #{dtdate}</if>
+	    <if test="userno != null">and CADRIVER.userno = #{userno}</if>
+	    <if test="active != null">and CADRIVER.active = #{active}</if>
+	    <if test="locationdate != null">and CADRIVER.locationdate = #{locationdate}</if>
+	    <if test="province != null">and CADRIVER.province = #{province}</if>
+	    <if test="city != null">and CADRIVER.city = #{city}</if>
+	    <if test="address != null">and CADRIVER.address = #{address}</if>
+	    <if test="locationmemo != null">and CADRIVER.locationmemo = #{locationmemo}</if>
+</sql>
+
+
+<!-- ElementID:DriverResult,Generated=true -->
+<resultMap id="DriverResult" type="demo.user.Driver">
+	<id property="lineid" column="lineid"/>
+	<result property="fleetid" column="fleetid"/>
+	<result property="driverno" column="driverno"/>
+	<result property="driverlicense" column="driverlicense"/>
+	<result property="drivername" column="drivername"/>
+	<result property="cardno" column="cardno"/>
+	<result property="homeaddress" column="homeaddress"/>
+	<result property="issuingorg" column="issuingorg"/>
+	<result property="getcarddate" column="getcarddate"/>
+	<result property="mobile" column="mobile"/>
+	<result property="hometel" column="hometel"/>
+	<result property="contact" column="contact"/>
+	<result property="tel" column="tel"/>
+	<result property="relationship" column="relationship"/>
+	<result property="memo" column="memo"/>
+	<result property="drivertype" column="drivertype"/>
+	<result property="dtdate" column="dtdate"/>
+	<result property="userno" column="userno"/>
+	<result property="active" column="active"/>
+	<result property="locationdate" column="locationdate"/>
+	<result property="province" column="province"/>
+	<result property="city" column="city"/>
+	<result property="address" column="address"/>
+	<result property="locationmemo" column="locationmemo"/>
+</resultMap>
+
+
+<!-- ElementName:cache,Generated=true -->
+<cache type="C2_Default_Dao_Cache"/>
+
+<!-- ElementID:count,Generated=true -->
+<select id="count" parameterType="demo.user.Driver" resultType="int">
+	select count(*) from CADRIVER 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+<!-- ElementID:update,Generated=true -->
+<update id="update" parameterType="demo.user.Driver">
+	update CADRIVER
+<set>
+	<if test="fleetid != null">fleetid=#{fleetid,jdbcType=NUMERIC},</if>
+	<if test="driverno != null">driverno=#{driverno,jdbcType=VARCHAR},</if>
+	<if test="driverlicense != null">driverlicense=#{driverlicense,jdbcType=VARCHAR},</if>
+	<if test="drivername != null">drivername=#{drivername,jdbcType=VARCHAR},</if>
+	<if test="cardno != null">cardno=#{cardno,jdbcType=VARCHAR},</if>
+	<if test="homeaddress != null">homeaddress=#{homeaddress,jdbcType=VARCHAR},</if>
+	<if test="issuingorg != null">issuingorg=#{issuingorg,jdbcType=VARCHAR},</if>
+	<if test="getcarddate != null">getcarddate=#{getcarddate,jdbcType=DATE},</if>
+	<if test="mobile != null">mobile=#{mobile,jdbcType=VARCHAR},</if>
+	<if test="hometel != null">hometel=#{hometel,jdbcType=VARCHAR},</if>
+	<if test="contact != null">contact=#{contact,jdbcType=VARCHAR},</if>
+	<if test="tel != null">tel=#{tel,jdbcType=VARCHAR},</if>
+	<if test="relationship != null">relationship=#{relationship,jdbcType=VARCHAR},</if>
+	<if test="memo != null">memo=#{memo,jdbcType=VARCHAR},</if>
+	<if test="drivertype != null">drivertype=#{drivertype,jdbcType=NUMERIC},</if>
+	<if test="dtdate != null">dtdate=#{dtdate,jdbcType=DATE},</if>
+	<if test="userno != null">userno=#{userno,jdbcType=VARCHAR},</if>
+	<if test="active != null">active=#{active,jdbcType=NUMERIC},</if>
+	<if test="locationdate != null">locationdate=#{locationdate,jdbcType=DATE},</if>
+	<if test="province != null">province=#{province,jdbcType=VARCHAR},</if>
+	<if test="city != null">city=#{city,jdbcType=VARCHAR},</if>
+	<if test="address != null">address=#{address,jdbcType=VARCHAR},</if>
+	<if test="locationmemo != null">locationmemo=#{locationmemo,jdbcType=VARCHAR}</if>
+</set>
+<where>
+	<choose>
+        <when test="lineid != null">and lineid = #{lineid}</when>
+        <otherwise>and lineid = </otherwise>
+    </choose>
+</where>
+</update>
+
+<!-- ElementID:updateNull,Generated=true -->
+<update id="updateNull" parameterType="map">
+	update CADRIVER
+	<set>
+		<trim suffixOverrides=",">
+		    <if test="fleetid==null">fleetid = null,</if>
+		    <if test="driverno==null">driverno = null,</if>
+		    <if test="driverlicense==null">driverlicense = null,</if>
+		    <if test="drivername==null">drivername = null,</if>
+		    <if test="cardno==null">cardno = null,</if>
+		    <if test="homeaddress==null">homeaddress = null,</if>
+		    <if test="issuingorg==null">issuingorg = null,</if>
+		    <if test="getcarddate==null">getcarddate = null,</if>
+		    <if test="mobile==null">mobile = null,</if>
+		    <if test="hometel==null">hometel = null,</if>
+		    <if test="contact==null">contact = null,</if>
+		    <if test="tel==null">tel = null,</if>
+		    <if test="relationship==null">relationship = null,</if>
+		    <if test="memo==null">memo = null,</if>
+		    <if test="drivertype==null">drivertype = null,</if>
+		    <if test="dtdate==null">dtdate = null,</if>
+		    <if test="userno==null">userno = null,</if>
+		    <if test="active==null">active = null,</if>
+		    <if test="locationdate==null">locationdate = null,</if>
+		    <if test="province==null">province = null,</if>
+		    <if test="city==null">city = null,</if>
+		    <if test="address==null">address = null,</if>
+		    <if test="locationmemo==null">locationmemo = null,</if>
+		</trim>
+	</set>
+	<where>
+		<choose>
+			<when test="lineid != null">and lineid = #{lineid}</when>
+			<otherwise>and lineid = </otherwise>
+		</choose>
+	</where>
+</update>
+
+<!-- ElementID:delete,Generated=true -->
+<delete id="delete" parameterType="demo.user.Driver">
+    delete from CADRIVER where 1=1 and lineid = #{lineid}
+</delete>
+
+<!-- ElementID:select,Generated=true -->
+<select id="select" parameterType="demo.user.Driver" resultMap="DriverResult">
+	select 
+		<include refid="column_sql"/>
+	    from CADRIVER 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+
+<!-- ElementID:deleteBatch,Generated=true -->
+<delete id="deleteBatch" parameterType="List">
+	delete from CADRIVER where lineid in
+<trim prefix="(" suffix=")" suffixOverrides=",">
+<foreach collection="list" item="entity" separator=",">
+	#{entity.lineid}
+</foreach>
+</trim>
+</delete>
+
+
+
+
+<!-- ElementID:selectAll,Generated=true -->
+<select id="selectAll" resultMap="DriverResult">
+	select 
+		<include refid="column_sql"/>
+	    from CADRIVER 
+</select>
+
+<!-- ElementID:selectMany,Generated=true -->
+<select id="selectMany" parameterType="list" resultMap="DriverResult">
+select 
+	<include refid="column_sql"/> 
+	from CADRIVER 
+	where CADRIVER.lineid in (
+<foreach collection="list" item="entity" separator="intersect">
+		select 
+		CADRIVER.lineid
+	    from CADRIVER 
+		 <where>
+	        <if test="entity.lineid != null">and CADRIVER.lineid = #{entity.lineid}</if>
+	        <if test="entity.fleetid != null">and CADRIVER.fleetid = #{entity.fleetid}</if>
+	        <if test="entity.driverno != null">and CADRIVER.driverno = #{entity.driverno}</if>
+	        <if test="entity.driverlicense != null">and CADRIVER.driverlicense = #{entity.driverlicense}</if>
+	        <if test="entity.drivername != null">and CADRIVER.drivername = #{entity.drivername}</if>
+	        <if test="entity.cardno != null">and CADRIVER.cardno = #{entity.cardno}</if>
+	        <if test="entity.homeaddress != null">and CADRIVER.homeaddress = #{entity.homeaddress}</if>
+	        <if test="entity.issuingorg != null">and CADRIVER.issuingorg = #{entity.issuingorg}</if>
+	        <if test="entity.getcarddate != null">and CADRIVER.getcarddate = #{entity.getcarddate}</if>
+	        <if test="entity.mobile != null">and CADRIVER.mobile = #{entity.mobile}</if>
+	        <if test="entity.hometel != null">and CADRIVER.hometel = #{entity.hometel}</if>
+	        <if test="entity.contact != null">and CADRIVER.contact = #{entity.contact}</if>
+	        <if test="entity.tel != null">and CADRIVER.tel = #{entity.tel}</if>
+	        <if test="entity.relationship != null">and CADRIVER.relationship = #{entity.relationship}</if>
+	        <if test="entity.memo != null">and CADRIVER.memo = #{entity.memo}</if>
+	        <if test="entity.drivertype != null">and CADRIVER.drivertype = #{entity.drivertype}</if>
+	        <if test="entity.dtdate != null">and CADRIVER.dtdate = #{entity.dtdate}</if>
+	        <if test="entity.userno != null">and CADRIVER.userno = #{entity.userno}</if>
+	        <if test="entity.active != null">and CADRIVER.active = #{entity.active}</if>
+	        <if test="entity.locationdate != null">and CADRIVER.locationdate = #{entity.locationdate}</if>
+	        <if test="entity.province != null">and CADRIVER.province = #{entity.province}</if>
+	        <if test="entity.city != null">and CADRIVER.city = #{entity.city}</if>
+	        <if test="entity.address != null">and CADRIVER.address = #{entity.address}</if>
+	        <if test="entity.locationmemo != null">and CADRIVER.locationmemo = #{entity.locationmemo}</if>
+		</where>
+</foreach>
+)
+</select>
+
+<!-- ElementID:selectByID,Generated=true -->
+<select id="selectByID" parameterType="java.lang.Integer" resultMap="DriverResult">
+	select 
+		<include refid="column_sql"/>
+	    from CADRIVER 
+		 where CADRIVER.lineid = #{lineid,jdbcType=NUMERIC}
+</select>
+
+<!-- ElementID:selectByPage,Generated=true -->
+<select id="selectByPage" parameterType="demo.user.Driver" resultMap="DriverResult">
+	select 
+		<include refid="column_sql"/>
+	    from CADRIVER 
+		 <where>
+			<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+
+<!-- ElementID:insert,Generated=false -->
+<insert id="insert" parameterType="demo.user.Driver">
+	<selectKey keyProperty="lineid" resultType="java.lang.Integer" order="BEFORE">
+         select S_DRIVERID.NEXTVAL from dual
+     </selectKey>
+	insert into CADRIVER(
+	<trim prefixOverrides=",">
+	         <if test="lineid != null">lineid</if>
+	         <if test="fleetid != null">,fleetid</if>
+	         <if test="driverno != null">,driverno</if>
+	         <if test="driverlicense != null">,driverlicense</if>
+	         <if test="drivername != null">,drivername</if>
+	         <if test="cardno != null">,cardno</if>
+	         <if test="homeaddress != null">,homeaddress</if>
+	         <if test="issuingorg != null">,issuingorg</if>
+	         <if test="getcarddate != null">,getcarddate</if>
+	         <if test="mobile != null">,mobile</if>
+	         <if test="hometel != null">,hometel</if>
+	         <if test="contact != null">,contact</if>
+	         <if test="tel != null">,tel</if>
+	         <if test="relationship != null">,relationship</if>
+	         <if test="memo != null">,memo</if>
+	         <if test="drivertype != null">,drivertype</if>
+	         <if test="dtdate != null">,dtdate</if>
+	         <if test="userno != null">,userno</if>
+	         <if test="active != null">,active</if>
+	         <if test="locationdate != null">,locationdate</if>
+	         <if test="province != null">,province</if>
+	         <if test="city != null">,city</if>
+	         <if test="address != null">,address</if>
+	         <if test="locationmemo != null">,locationmemo</if>
+	 	 	 </trim>
+	 )
+	 values (
+	 <trim prefixOverrides=",">
+	         <if test="lineid != null">#{lineid,jdbcType=NUMERIC}</if>
+	         <if test="fleetid != null">,#{fleetid,jdbcType=NUMERIC}</if>
+	         <if test="driverno != null">,#{driverno,jdbcType=VARCHAR}</if>
+	         <if test="driverlicense != null">,#{driverlicense,jdbcType=VARCHAR}</if>
+	         <if test="drivername != null">,#{drivername,jdbcType=VARCHAR}</if>
+	         <if test="cardno != null">,#{cardno,jdbcType=VARCHAR}</if>
+	         <if test="homeaddress != null">,#{homeaddress,jdbcType=VARCHAR}</if>
+	         <if test="issuingorg != null">,#{issuingorg,jdbcType=VARCHAR}</if>
+	         <if test="getcarddate != null">,#{getcarddate,jdbcType=DATE}</if>
+	         <if test="mobile != null">,#{mobile,jdbcType=VARCHAR}</if>
+	         <if test="hometel != null">,#{hometel,jdbcType=VARCHAR}</if>
+	         <if test="contact != null">,#{contact,jdbcType=VARCHAR}</if>
+	         <if test="tel != null">,#{tel,jdbcType=VARCHAR}</if>
+	         <if test="relationship != null">,#{relationship,jdbcType=VARCHAR}</if>
+	         <if test="memo != null">,#{memo,jdbcType=VARCHAR}</if>
+	         <if test="drivertype != null">,#{drivertype,jdbcType=NUMERIC}</if>
+	         <if test="dtdate != null">,#{dtdate,jdbcType=DATE}</if>
+	         <if test="userno != null">,#{userno,jdbcType=VARCHAR}</if>
+	         <if test="active != null">,#{active,jdbcType=NUMERIC}</if>
+	         <if test="locationdate != null">,#{locationdate,jdbcType=DATE}</if>
+	         <if test="province != null">,#{province,jdbcType=VARCHAR}</if>
+	         <if test="city != null">,#{city,jdbcType=VARCHAR}</if>
+	         <if test="address != null">,#{address,jdbcType=VARCHAR}</if>
+	         <if test="locationmemo != null">,#{locationmemo,jdbcType=VARCHAR}</if>
+	 	 	 </trim>
+	 )
+</insert>
+
+<!-- ElementID:insertBatch,Generated=true -->
+<insert id="insertBatch" parameterType="list">
+	insert into CADRIVER (lineid,fleetid,driverno,driverlicense,drivername,cardno,homeaddress,issuingorg,getcarddate,mobile,hometel,contact,tel,relationship,memo,drivertype,dtdate,userno,active,locationdate,province,city,address,locationmemo)
+		select  CADRIVER_PK.NEXTVAL , B.* from(
+			<foreach collection="list" item="entity" index="index" separator="union all">
+				select 
+	              #{entity.fleetid,jdbcType = NUMERIC},
+	              #{entity.driverno,jdbcType = VARCHAR},
+	              #{entity.driverlicense,jdbcType = VARCHAR},
+	              #{entity.drivername,jdbcType = VARCHAR},
+	              #{entity.cardno,jdbcType = VARCHAR},
+	              #{entity.homeaddress,jdbcType = VARCHAR},
+	              #{entity.issuingorg,jdbcType = VARCHAR},
+	              #{entity.getcarddate,jdbcType = DATE},
+	              #{entity.mobile,jdbcType = VARCHAR},
+	              #{entity.hometel,jdbcType = VARCHAR},
+	              #{entity.contact,jdbcType = VARCHAR},
+	              #{entity.tel,jdbcType = VARCHAR},
+	              #{entity.relationship,jdbcType = VARCHAR},
+	              #{entity.memo,jdbcType = VARCHAR},
+	              #{entity.drivertype,jdbcType = NUMERIC},
+	              #{entity.dtdate,jdbcType = DATE},
+	              #{entity.userno,jdbcType = VARCHAR},
+	              #{entity.active,jdbcType = NUMERIC},
+	              #{entity.locationdate,jdbcType = DATE},
+	              #{entity.province,jdbcType = VARCHAR},
+	              #{entity.city,jdbcType = VARCHAR},
+	              #{entity.address,jdbcType = VARCHAR},
+	              #{entity.locationmemo,jdbcType = VARCHAR}
+		        from dual
+</foreach>
+	    )B
+</insert>
+
+<!--Generated=true-->
+<update id="updateBatch" parameterType="list">
+	<foreach collection="list" item="entity" open="begin" close=";end;" separator=";">
+			update CADRIVER
+	<set>
+	<if test="entity.fleetid != null">fleetid= #{entity.fleetid,jdbcType=NUMERIC},</if>
+	<if test="entity.driverno != null">driverno= #{entity.driverno,jdbcType=VARCHAR},</if>
+	<if test="entity.driverlicense != null">driverlicense= #{entity.driverlicense,jdbcType=VARCHAR},</if>
+	<if test="entity.drivername != null">drivername= #{entity.drivername,jdbcType=VARCHAR},</if>
+	<if test="entity.cardno != null">cardno= #{entity.cardno,jdbcType=VARCHAR},</if>
+	<if test="entity.homeaddress != null">homeaddress= #{entity.homeaddress,jdbcType=VARCHAR},</if>
+	<if test="entity.issuingorg != null">issuingorg= #{entity.issuingorg,jdbcType=VARCHAR},</if>
+	<if test="entity.getcarddate != null">getcarddate= #{entity.getcarddate,jdbcType=DATE},</if>
+	<if test="entity.mobile != null">mobile= #{entity.mobile,jdbcType=VARCHAR},</if>
+	<if test="entity.hometel != null">hometel= #{entity.hometel,jdbcType=VARCHAR},</if>
+	<if test="entity.contact != null">contact= #{entity.contact,jdbcType=VARCHAR},</if>
+	<if test="entity.tel != null">tel= #{entity.tel,jdbcType=VARCHAR},</if>
+	<if test="entity.relationship != null">relationship= #{entity.relationship,jdbcType=VARCHAR},</if>
+	<if test="entity.memo != null">memo= #{entity.memo,jdbcType=VARCHAR},</if>
+	<if test="entity.drivertype != null">drivertype= #{entity.drivertype,jdbcType=NUMERIC},</if>
+	<if test="entity.dtdate != null">dtdate= #{entity.dtdate,jdbcType=DATE},</if>
+	<if test="entity.userno != null">userno= #{entity.userno,jdbcType=VARCHAR},</if>
+	<if test="entity.active != null">active= #{entity.active,jdbcType=NUMERIC},</if>
+	<if test="entity.locationdate != null">locationdate= #{entity.locationdate,jdbcType=DATE},</if>
+	<if test="entity.province != null">province= #{entity.province,jdbcType=VARCHAR},</if>
+	<if test="entity.city != null">city= #{entity.city,jdbcType=VARCHAR},</if>
+	<if test="entity.address != null">address= #{entity.address,jdbcType=VARCHAR},</if>
+	<if test="entity.locationmemo != null">locationmemo= #{entity.locationmemo,jdbcType=VARCHAR}</if>
+	</set>
+		<where>
+			<choose>
+				<when test="entity.lineid != null">and lineid = #{entity.lineid}</when>
+				<otherwise>and lineid = </otherwise>
+			</choose>
+		</where>
+	</foreach>
+</update>
+</mapper>

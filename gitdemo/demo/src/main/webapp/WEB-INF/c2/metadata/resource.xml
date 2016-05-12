@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<PRSet xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns="http://www.chinacreator.com/platform/mvc/perm">
-  <resources>
-    <resource id="-nDMCtWvRNGLqy5ece81XQ" name="[表单:明细][表格按钮]删除" path="f/detail001/ldept/toolbar_table/buttonDel" type="dom"/>
-  </resources>
-</PRSet>

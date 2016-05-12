@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<CustomRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns="http://www.chinacreator.com/platform/mvc/rule" sn="001" service="false" log="false" className="unlcn.com.services.CUserService" method="save">
+<CustomRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns="http://www.chinacreator.com/platform/mvc/rule" sn="001" log="false" className="unlcn.com.services.CUserService" method="save">
   <instanceCreator>
     <params/>
   </instanceCreator>
   <name>用户</name>
+  <desc>test</desc>
   <inputs>
     <input collection="false" desc="" id="luser" required="true" type="demo.user.User"/>
   </inputs>
